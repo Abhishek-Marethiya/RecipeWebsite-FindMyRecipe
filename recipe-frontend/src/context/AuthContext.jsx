@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
     // const storedUser = JSON.parse(localStorage.getItem("authUser"));
     const checkAuth=async()=>{
       try {
-        const currentuser=await fetch('http://localhost:5050/api/user/me',{
+        const currentuser=await fetch('https://findmyrecipe-backend.onrender.com/api/user/me',{
           method:'GET',
           headers: { "Content-Type": "application/json" },
           credentials:'include',
