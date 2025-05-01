@@ -17,7 +17,7 @@ export const FavoriteProvider = ({ children }) => {
   const updateFavoritesInDB = async (newFavorites) => {
     const updatedUser = { ...currentUser, favorites: newFavorites };
 
-    const res = await fetch(`http://localhost:5050/api/user/update-favorites`, {
+    const res = await fetch(`https://findmyrecipe-backend.onrender.com/api/user/update-favorites`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
