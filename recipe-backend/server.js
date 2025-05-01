@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-	origin: 'http://localhost:5173', // your frontend's URL
+	origin: 'https://findmyrecipe-frontend.onrender.com', // your frontend's URL
 	methods: ['GET', 'POST', 'PUT', 'DELETE'],
 	allowedHeaders: ['Content-Type', 'Authorization'],
 	credentials: true // allow cookies and credentials
