@@ -51,7 +51,7 @@ function AddRecipe() {
     };
 
     try {
-      const res = await fetch('http://localhost:5050/api/recipes/addrecipe', {
+      const res = await fetch('https://findmyrecipe-backend.onrender.com/api/recipes/addrecipe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newRecipe)
