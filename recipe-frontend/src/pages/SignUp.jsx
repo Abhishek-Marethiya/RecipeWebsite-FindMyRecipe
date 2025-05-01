@@ -33,7 +33,7 @@ function SignUp() {
 console.log("till here okay..");
 
     try {
-      const res = await fetch('http://localhost:5050/api/user/signup', {
+      const res = await fetch('https://findmyrecipe-backend.onrender.com/api/user/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
