@@ -14,7 +14,7 @@ export const PostedRecipesProvider=({children})=>{
     useEffect(() => {
         const fetchAllPostedRecipes = async () => {
             try {
-                const res = await fetch('http://localhost:5050/api/recipes');
+                const res = await fetch('https://findmyrecipe-backend.onrender.com/api/recipes');
                 const allRecipes = await res.json();
                 if (allRecipes) {
                     setAllPostedRecipes(allRecipes);
