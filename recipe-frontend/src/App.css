@@ -1,0 +1,1131 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+FR+Trad:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+body, button, input {
+  font-family: 'Inter', sans-serif;
+}
+body{
+  background-color: #F5F5F5;  
+}
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+/* BANNER--------------- */
+.banner{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  width: 100%;
+  height: 40px;
+  background-color:#734060;
+  color: white;
+  position: relative;
+}
+.banner-content{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: .8;
+  letter-spacing: 1px;
+  font-family: "Jost", sans-serif;
+}
+.banner-btn{
+  position: absolute;
+  right: 20px;
+  top: 10px;
+   color: white;
+   font-size: 1.2rem;
+   cursor: pointer;
+    outline: none;
+    background: transparent;
+    border: none;
+  &:hover{
+    color: red;
+  }
+}
+/* HEADER------------------------ */
+.header{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  border-bottom: 1px solid #ddc5d8;
+  position: relative;
+}
+.navbar{
+  background-color: #F5F5F5;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+  margin-left: 5rem;
+  >li{
+    list-style: none;
+  }
+}
+.sidebar{
+  background-color: #F5F5F5;
+  height: fit-content;
+  width: 200px;
+  z-index: 1000;
+  display: flex;
+  left: -140px;
+  top: 0;
+  padding: 2rem;
+  margin-left: 9rem;
+  position: absolute;
+  border: 2px solid #ddc5d8;
+  box-shadow: 0 0 10px #d1c7cc;
+  border-radius: 13px;
+  transform: translateY(-150%);
+  transition: transform 0.5s ease-in-out;
+  >li{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+.sidebar.open {
+  transform: translateY(0);
+}
+
+.sidebar-link{
+  text-decoration: none;
+  font-size: 16px;
+  color: black;
+  padding: 2px 1px;
+  font-family: "Jost", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  &:hover{
+    cursor: pointer;
+  }
+}
+.profilebar{
+  background-color: #F5F5F5;
+  height: fit-content;
+  width: 200px;
+  z-index: 1000;
+  right: 5px;
+  top: 100px;
+  padding: 1rem;
+  margin-left: 9rem;
+  position: absolute;
+  border: 2px solid #ddc5d8;
+  box-shadow: 0 0 10px #d1c7cc;
+  border-radius: 13px;
+  transform: translateX(150%);
+  transition: transform 0.5s ease-in-out;
+}
+.profilebar.open {
+  transform: translateY(0);
+}
+
+.logo{
+  font-family: Domaine Display, Georgia, Cambria, Times New Roman, Times, serif;
+  color: gray;
+  font-family: cursive;
+  font-size: 2rem;
+  cursor: pointer;
+  >span{
+    color: #734060;
+    font-family: Domaine Display, Georgia, Cambria, Times New Roman, Times, serif;
+  }
+}
+.link{
+  text-decoration: none;
+  font-size: 16px;
+  color: black;
+  margin-inline: 1.5rem;
+  padding: 2px 1px;
+  font-family: "Jost", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+}
+.link::before{
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #734060;
+  bottom: 3px;
+  left: 50%;
+  right: 50%;
+  transition: width 0.3s ease-in-out;
+  transform: translateX(-50%);
+
+}
+.link:hover::before{
+  width: 100%;
+
+}
+
+.nav-buttons {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  margin-left: 7rem;
+  /* gap: 1rem; */
+}
+.search, .login, .favorite,.logout,.myrecipes {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  width: 130px;
+}
+.profile{
+  background-color: #734060;
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: all .3s linear;
+  &:hover{
+    background-color: #ddc5d8;
+    color: black;
+  }
+}
+.search-name, .login-name, .favorite-name,.logout-name,.myrecipes-name {
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: .8px;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease-in-out;
+  background-color: #f0e3e8;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+.profile-name{
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: .8px;
+  margin-bottom: 4px;
+}
+.hambuger{
+  color: #734060;
+  display: none;
+  font-size: 1.5rem;
+}
+.tabhambuger{
+  display: none;
+  color: #734060;
+  font-size: 1.5rem;
+}
+.closeSidebar,.closeTabSidebar{
+  color: gray;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nav-search-icon, .fav-icon, .login-icon ,.logout-icon,.hambuger,.closeSidebar,.myrecipes-icon{
+  color: #734060;
+  font-size: 1.2rem;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.profile-icon{
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.logout-icon,.fav-icon,.myrecipes-icon{
+  font-size: 1.4rem;
+}
+
+
+.nav-search-icon:hover + .search-name,
+.fav-icon:hover + .favorite-name,
+.login-icon:hover + .login-name,
+.logout-icon:hover + .logout-name,
+.myrecipes-icon:hover+.myrecipes-name  {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.nav-search-icon:hover,
+.fav-icon:hover,
+.login-icon:hover,
+.logout-icon:hover {
+  background-color: #f0e3e8;
+}
+
+
+/* ...............................HOME PAGE */
+.home-page{
+  width: 100%;
+  height: 100vh;
+  padding-top: 1rem;
+  text-align: center;
+  >h1{
+    font-family: Bitter, Georgia, Cambria, Times New Roman, Times, serif;
+  }
+  >p{
+    font-family: "Jost", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    >span{
+  color: #734060;
+  font-family: "Playwrite FR Trad", cursive;
+  font-size: 1.1rem;
+  text-transform: lowercase;
+    }
+  }
+}
+
+
+.home-page-images {
+  width: 90%;
+  height: fit-content;
+  margin: 1rem auto;
+  overflow: hidden;
+  padding: 2rem;
+  background-color: #eaeaec50;
+}
+
+.carousel {
+  width: 100%;
+  margin: auto;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
+  color: #734060;
+}
+.arrow.prev {
+  left: 15px;
+}
+.arrow.next {
+  right: 15px;
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #d1c7cc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.dot.active {
+  background-color: #734060;
+  
+}
+.home-images {
+  width: 100%;
+  overflow: hidden;
+  margin-block: 2rem;
+  position: relative;
+}
+
+.home-images-wrapper {
+  display: flex;
+  gap: 2rem;
+  animation: scroll 20s linear infinite;
+}
+
+.home-image {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-family: Domaine Display, Georgia, Cambria, Times New Roman, Times, serif;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.home-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Blur/Shadow on sides */
+.home-images::before,
+.home-images::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.home-images::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+.home-images::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+/* Animation Keyframes */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Smooth Pause on Hover */
+.home-images:hover .home-images-wrapper {
+  animation-play-state: paused;
+}
+
+
+.explore-btn{
+  width: 50%;
+  border: none;
+  outline: none;
+  background-color: #734060;
+  padding: 10px 20px;
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: .5px;
+  border-radius: 13px;
+  transition: all .3s linear;
+  color: white;
+  &:hover{
+    background-color: black;
+  
+  }
+  
+}
+.home-page-about-me{
+  width: 90%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-evenly;
+gap: 1rem;
+  >div{
+    width: 450px;
+    background-color: 	#e5e7eb;
+    padding: 3rem;
+    >h2{
+      margin-block: 1rem;
+      font-family: Domaine Display, Georgia, Cambria, Times New Roman, Times, serif;
+      >span{
+        color: gray;
+        font-family: "Playwrite FR Trad", cursive;
+      }
+    }
+    >p{
+      font-family: "Jost", sans-serif;
+      font-size: 1.2rem;
+      line-height: 2rem;
+      margin-block: 2rem;
+      
+    }
+    >button{
+      outline: none;
+      border: none;
+      font-family: "Jost", sans-serif;
+      font-weight: bold;
+      font-size: 1rem;
+      background-color: #4d4d4d;
+      color: white;
+      padding: 10px 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all .3s linear;
+      &:hover{
+        background-color: black;
+      }
+    }
+  }
+  >img{
+    width: 350px;
+    height: 450px;  
+    object-fit:cover;  
+  }
+
+}
+
+
+
+
+/* search-box */
+.recipe-intro{
+  width: 100%;
+  height: 400px;
+  padding-block: 2rem;
+  background-color: #734060;
+  color: white;
+  text-align: center;
+  position: relative;
+  >h1{
+   margin-block: 2rem;
+   letter-spacing: 1px;
+   font-size: 4rem;
+   font-family: Domaine Display, Georgia, Cambria, Times New Roman, Times, serif;
+  }
+  >span{
+   color: white;
+   opacity: .8;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: .5rem;
+   font-size: .8rem;
+   font-weight: bold;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+  }
+  >p{
+   width: 90%;
+   margin: auto;
+   font-size: 1.5rem;
+   letter-spacing: 2px;
+   opacity: .6;
+   font-family: Bitter, Georgia, Cambria, Times New Roman, Times, serif;
+   line-height: 2.5rem;
+  }
+}
+
+
+.search-box{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  background-color: #f1edf0;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* border-top: 5px solid #ddc5d8; */
+  border-bottom: 5px solid #ddc5d8;
+  border-radius: 13px;
+  position: relative;
+  margin: -1.5rem auto;
+  bottom: unset; /* remove fixed vertical position */
+  left: unset;
+  >p{
+    width: 20%;
+    letter-spacing: .3px;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    font-family: "Jost", sans-serif;
+  }
+}
+.search-icon{
+  color: #734060;
+  font-size: 1.1rem;
+}
+
+.homepagelink{
+  color: white;
+  opacity: .8;
+  text-decoration: none;
+  &:hover{
+  text-decoration:underline;
+  }
+}
+.searchbar{
+width: 80%;
+ >input{
+  outline: none;
+  border: 2px solid #ddc5d8;
+  border-radius: 13px;
+  padding: 5px 10px;
+  letter-spacing: .5px;
+  font-size: 1rem;
+  margin-inline: .5rem;
+  width: 70%;
+  font-family: "Jost", sans-serif;
+  &:focus{
+    border-color: #734060;
+  }
+ }
+ >button{
+  border: none;
+  cursor: pointer;
+  background-color: #ddc5d8;
+  padding: 6px 10px;
+  border-radius:10px;
+ }
+}
+
+
+
+.recipes,.favorites{
+  width: 100%;
+  min-height: 100vh;
+}
+.recipes-list,.favorite-list{
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+   justify-content: center;
+}
+.recipe-card{
+  width: 300px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  border-bottom: 3px solid #ddc5d8;
+}
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+.recipe-card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  background: linear-gradient(#734060, #ddc5d8);
+  z-index: -1;
+  transition: all .5s ease-in-out;
+}
+.recipe-card:hover::before{
+  height: 100%;
+  border: none;
+}
+.recipe-image{
+  width: 100%;
+  height: 250px;
+
+  >img{
+    width: 100%;
+    height: 100%;
+     object-fit: cover;
+     z-index: 100;
+  }
+}
+.card-btns{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 5px;
+  align-items: center;
+
+  >button{
+    margin-top: 1rem;
+    outline: none;
+  border: none;
+  background-color: #d1c7cc;
+  padding: 5px 10px;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: .9rem;
+  border-radius: 5px;
+  cursor: pointer;
+   transition: all .3s linear;
+  &:hover{
+    background-color: #4e2c3d;
+    color: white;
+  }
+  }
+}
+.card-fav-icon{
+  margin-top: 1rem;
+  color: #734060;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+.recipecontent{
+  margin-block: .5rem;
+font-family: Bitter, Georgia, Cambria, Times New Roman, Times, serif;
+}
+.recipe-name{
+  font-family: "Jost", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: .3px;
+  font-size: 1.2rem;
+}
+/* recipe detail page */
+.recipe-detail{
+  width: 100%;
+  min-height: 100vh;
+  padding-inline: 3rem;
+  padding-block:1rem ;
+  >h1{
+    font-family: Domaine Display, Georgia, Cambria, Times New Roman, Times, serif;
+    color: #4e2c3d;
+    border-bottom: 2px solid #734060;
+    width: fit-content;
+    margin-block: 1rem;
+  }
+}
+.recipeinstructions{
+  width: 100%;
+  >h3{
+    font-family: "Jost", sans-serif;
+  }
+  >p{
+    font-family: "Jost", sans-serif;
+    margin-bottom: 1rem;
+    text-align: justify;
+  }
+}
+.ingredients{
+  >h3{
+    font-family: "Jost", sans-serif;
+  }
+  >ul{
+    font-family: "Jost", sans-serif;
+    margin-bottom: 1rem;
+  }
+}
+.youtube-video{
+  >h3{font-family: "Jost", sans-serif;
+  margin-bottom: .5rem;}
+}
+
+/* about page */
+
+.about{
+  width: 100%;
+  height:100vh;
+}
+.about-me{
+  background-color:#e5e7eb;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+   gap: 3rem;
+   padding-inline:4.5rem;
+}
+.myimage{
+  width: 50%;
+  height: 85%;
+  >img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.about-me-content{
+    width: 50%;
+    padding: 1rem;
+    >span{
+      color: gray;
+      opacity: 1;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+     }
+     >h1{
+      font-size: 3rem;
+       margin-block: 2rem;
+      color: #734060;
+      font-family: Bitter, Georgia, Cambria, Times New Roman, Times, serif;
+     }
+     >h2{
+      font-family: Bitter, Georgia, Cambria, Times New Roman, Times, serif;
+      text-transform: uppercase;
+      >span{
+        font-family: cursive;
+        color: gray;
+        text-transform: capitalize;
+      }
+     }
+     >p{
+      margin-top: 1.1rem;
+      font-size: 1rem;
+      opacity: .6;
+      font-family: Bitter, Georgia, Cambria, Times New Roman, Times, serif;
+      line-height: 2.5rem;
+      text-align: justify;
+     }
+   }
+.followus{
+  width: 100%;
+  height: 100px;
+  color: white;
+  display: flex;
+  align-items: center;
+  background-color: #734060;
+  padding-inline: 2rem;
+  >h4{
+    font-family: Bitter, Georgia, Cambria, Times New Roman, Times, serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+    /* font-size: 1rem; */
+  }
+}
+.about-team{
+  width: 100%;
+  text-align: center;
+  min-height: 100vh;
+  
+  >h3{
+    margin-block: 1rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: "Jost", sans-serif;
+  }
+  >p{
+    width: 65%;
+    margin: 1rem auto;
+    font-size: 1rem;
+    opacity: .8;
+    font-family: Bitter, Georgia, Cambria, Times New Roman, Times, serif;
+    line-height: 1.5rem;
+    
+  }
+}
+.team-grid{
+ width: 100%;
+ margin-block: 2rem;
+}
+.team-card {
+  width: 65%;
+  margin: 2rem auto;
+  display: flex;
+
+  > div {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+
+    > h4 {
+      color: #4e2c3d;
+      font-size: 1.1rem;
+      width: fit-content;
+    }
+    >p{
+      text-align: justify;
+    }
+  }
+
+  > img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transition: all 0.3s linear;
+    &:hover{
+      opacity: 0.8;
+
+    }
+  }
+
+}
+.line{
+  width: 100%;
+  height: 2px;
+  background-color: #734060;
+}
+.bio{
+  font-size: .9rem;
+  color: #4d4d4d;
+  font-family: Bitter, Georgia, Cambria, Times New Roman, Times, serif;
+  line-height: 1.3rem;
+}
+.error{
+  width: 100%;
+  height: 400px;
+  background-color: #f0e3e8;
+  align-items: center;
+  >h1{
+    font-family: Domaine Display, Georgia, Cambria, Times New Roman, Times, serif;
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+.toggle-btn{
+    padding: 6px 12px;
+    background-color: #734060;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Jost", sans-serif;
+    margin-inline: 1rem;
+    transition: all .3s linear;
+    &:hover{
+      background-color:#4e2c3d;
+    }
+}
+.signup-page,.login-page,.add-recipe-page{
+  width: 40%;
+  margin: auto;
+  margin-block: 3rem;
+  padding: 1rem;
+  border-radius: 13px;
+  background: transparent;
+  box-shadow:0px 0px 10px #734060;
+  >h2{
+    font-family: Bitter, Georgia, Cambria, Times New Roman, Times, serif;
+    color: #734060;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+}
+
+.signup-form,.login-form,.add-recipe-form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  >input,textarea{
+    outline: none;
+    border: 2px solid #ddc5d8;
+    border-radius: 13px;
+    padding: 8px 10px;
+    letter-spacing: .5px;
+    font-size: 1rem;
+    margin-inline: .5rem;
+      resize: vertical;
+    
+    font-family: "Jost", sans-serif;
+    &:focus{
+      border-color: #734060;
+    }
+   }
+   >button,.submit-recipe-btn{
+      width: 97%;
+      margin: auto;
+      border: none;
+      outline: none;
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 13px;
+      color: white;
+      background-color: #734060;
+      font-family: "Jost", sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all .31s linear;
+
+      &:hover{
+       background-color: gray;
+      }
+   }
+   >p{
+    font-family: "Jost", sans-serif;
+    text-align: center;
+   }
+}
+
+.footer{
+  background-color: #d1c7cc;
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  width: 100%;
+  margin: auto;
+  padding-block: 2rem;
+}
+.footer-content{
+  >p{
+    font-size: 12px;
+    margin-block: .5rem;
+  }
+}
+.footer-socials,.followus-socials {
+  width: 30%;
+  /* margin: 2rem auto; */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  color: #734060;
+
+  > i {
+    position: relative;
+    margin-inline: 8px;
+    color: white;
+    background-color: #734060;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 6px 5px 0px 5px;
+    border-radius: 50%;
+    transition: transform 0.4s ease;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  > i::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0%;
+    width: 100%;
+    background-color: #d1c7cc;
+    z-index: -1;
+    transition: height .5s ease;
+    border-radius: 50%;
+  }
+
+  > i:hover {
+    /* transform: rotateY(360deg); */
+    color: black;
+  }
+  > i:hover::before {
+    height: 100%;
+  }
+}
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-block: 2rem;
+  flex-wrap: wrap;
+}
+.pagination button {
+  padding: 6px 12px;
+  background-color: #734060;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.pagination button.active {
+  background-color: #4e2c3d;
+  font-weight: bold;
+}
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.loader {
+  width: 100%;
+  height: 80vh;
+  padding: 5rem;
+  text-align: center;
+}
+
+.loader {
+  > div{
+  font-size: 3rem; 
+  color: #734060;
+  animation: spin 2s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1; 
+  transform-origin: center center;
+}
+>p{
+  font-size: 1.2rem;
+  color: #734060;
+  margin-block: 1rem;
+  font-family: "Jost", sans-serif;
+  margin-left: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+}
+  
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+

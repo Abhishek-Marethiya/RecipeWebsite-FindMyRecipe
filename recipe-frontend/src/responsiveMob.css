@@ -1,0 +1,162 @@
+@media (min-width: 340px) and (max-width: 767px) {
+    /* BANNER--------------- */
+.banner{
+    height: 60px;
+}
+ .banner-content{
+   text-align: center;
+   margin-right: 1.5rem;
+ }
+ .banner-btn{
+    top: 22px;
+ 
+   font-size: 16px;
+
+ }
+ .header{
+   justify-content: space-around;
+ }
+ .navbar{
+   display: none;
+ }
+ .nav-buttons {
+   display: none;
+ }
+ .hambuger {
+   display: flex;
+   font-size: 1.5rem;
+   margin-top: 8px;
+ }
+ .closeSidebar{
+   color: gray;
+   font-size: 1.5rem;
+   font-weight: bold;
+   margin-top: 8px;
+ }
+
+.home-page-images{
+   padding: 1px;
+}
+.carousel{
+   height: 300px;
+}
+.arrow{
+
+   font-size: 1rem;
+}
+.arrow.prev {
+   left: 10px;
+ }
+ .arrow.next {
+   right: 10px;
+ }
+ .explore-btn{
+   width: 90%;
+ }
+ .home-page-about-me{
+    flex-direction: column;
+    >img{
+       width: 100%;
+    }
+    >div{
+       width: 100%;
+       padding: 1rem;
+    }
+    >p{
+       text-align: justify;
+    }
+ }
+ .footer-socials,.followus-socials {
+   width: 100%;
+ }
+
+ .about-me{
+   flex-direction: column;
+   flex-flow: column-reverse;
+   padding-inline:1.5rem;
+   height: fit-content;
+   gap: 1rem;
+   margin-bottom: 1rem;
+   >img{
+       width: 100%;
+       height: 300px;
+       object-fit: cover;
+       object-position: center;
+
+   }
+   >div{
+       width: 100%;
+       >h1{
+           margin-block: 1rem;
+       }
+       >p{
+           line-height:1.6rem;
+       }
+   }
+ }
+ .followus{
+   flex-direction: column;
+   gap: 1.2rem;
+   padding-top: 1rem;
+  
+ }
+ .about-team{
+   
+   >p{
+     width: 80%;
+     text-align: justify;
+   }
+ }
+ .team-card{
+   flex-direction: column;
+   width: 80%;
+   gap: 0rem;
+   margin: 1rem auto;
+   border-bottom: 2px solid #734060;;
+ }
+ .recipe-intro{
+   height: 450px;
+ >h1{
+   margin-block: 1rem;
+ }
+
+ >p{
+   font-size: 1.3rem;
+   letter-spacing: 1.2px;
+   line-height: 1.6rem;
+   text-align: justify;
+  }
+ }
+ .search-box{
+   flex-direction: column;
+   padding: 0;
+   padding-block: 1rem;
+   >P{
+       width: 100%;
+       margin-bottom: 5px;
+   }
+  
+ }
+ .searchbar{
+   width: 90%;
+    >input{
+     margin-inline: 0rem;
+     width: 100%;
+     margin-block: 10px;
+    }
+   .signup-page,.login-page{
+       margin-block: 2rem;
+       width: 85%;
+     }
+   }
+   .search-icon{
+      width: 50%;
+      padding-left: 3rem;
+     }
+
+
+    .signup-page,.login-page,.add-recipe-page{
+        margin-block: 2rem;
+        width: 85%;
+      }
+}

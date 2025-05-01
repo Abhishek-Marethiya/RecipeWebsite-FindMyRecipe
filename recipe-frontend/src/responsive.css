@@ -1,0 +1,110 @@
+
+@media (min-width: 768px) and (max-width: 1000px) {
+    /* BANNER hEADER----------------- */
+  .navbar {
+    margin-left: 0;
+  }
+  .link {
+    margin-inline: 1rem;
+  }
+  .nav-buttons {
+    display: none;
+  }
+  .tabhambuger {
+    display: flex;
+    margin-top: 8px;
+    font-size: 1.5rem;
+  }
+  .closeTabSidebar{
+    color: gray;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+  /* HOMEPAGE */
+  .home-images{
+    width: 100%;
+    margin-block: 2rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .home-page-about-me img:nth-of-type(2) {
+    display: none;
+ }
+ 
+ .footer-socials,.followus-socials {
+    > i {
+      font-size: 1.25rem;
+    }
+  }
+
+  /* about */
+  .about-me{
+     gap: .1rem;
+     padding-inline:3.7rem;
+     padding-bottom: 1rem;
+     >img{
+      width: 50%;
+      max-height: fit-content;
+      object-fit: cover;
+      object-position: center center;
+     }
+     >div{
+    
+       >p{
+        margin-top: 1.1rem;
+        font-size: 1rem;
+        opacity: .6;
+        font-family: Bitter, Georgia, Cambria, Times New Roman, Times, serif;
+        line-height: 1.8rem;
+        text-align: justify;
+       }
+     }
+  }
+  .about-team{
+    >p{
+      width: 80%;
+    }
+  }
+  .team-card{
+    width: 80%;
+  }
+  /* recipe page */
+  .recipe-intro{
+>p{
+    line-height: 2rem;
+}
+  }
+  .search-box{
+    width: 93%;
+    margin: auto;
+    text-align: center;
+    background-color: #f1edf0;
+    padding-inline: 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border-top: 5px solid #ddc5d8; */
+    border-bottom: 5px solid #ddc5d8;
+    border-radius: 13px;
+    position: relative;
+    margin: -1.5rem auto;
+    bottom: unset; /* remove fixed vertical position */
+    left: unset;
+    >p{
+      width: 25%;
+    }
+  }
+  .searchbar{
+ 
+     >input{
+      margin-inline: .7rem;
+      width: 80%;
+     }
+     }
+
+     .signup-page,.login-page,.add-recipe-page{
+        width: 70%;
+      }
+}
