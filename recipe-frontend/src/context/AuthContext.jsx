@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
           credentials:'include',
         });
         if (currentuser.ok) {
-          const user=currentuser.json();
+          const user=await currentuser.json();
           setCurrentUser(user);
           setIsLogin(true);
         }
