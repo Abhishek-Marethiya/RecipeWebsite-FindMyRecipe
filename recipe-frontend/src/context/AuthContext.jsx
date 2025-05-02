@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = async() => {
-        const res=await fetch('http://localhost:5050/api/user/logout',{
+        const res=await fetch('https://findmyrecipe-backend.onrender.com/api/user/logout',{
           method:'POST',
           headers: { "Content-Type": "application/json" },
           credentials:'include'
