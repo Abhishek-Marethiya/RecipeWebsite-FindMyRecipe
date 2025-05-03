@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Navbar from "./Navbar";
 import { FaSearch } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
@@ -13,35 +13,95 @@ import { FiLogIn } from "react-icons/fi";
 import SideBar from "./SideBar";
 import SidebarTab from "./SidebarTab";
 import ProfileBar from "./ProfileBar";
+
 function Header() {
-  const { isLogin, logout } = useContext(AuthContext);
+  const { isLogin, logout, isProfileBarVisible, setIsProfileBarVisible } = useContext(AuthContext);
+
   const [isSidebaarVisible, setIsSidebaarVisible] = useState(false);
   const [isTabSidebaarVisible, setIsTabSidebaarVisible] = useState(false);
-  const { isProfileBarVisible, setIsProfileBarVisible } =
-    useContext(AuthContext);
 
   const navigate = useNavigate();
+
+  const sidebarRef = useRef();
+  const profileRef = useRef();
+  const tabSidebarRef = useRef();
+
+  // For Sidebar (Desktop)
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(e.target)) {
+        setIsSidebaarVisible(false);
+      }
+    };
+
+    if (isSidebaarVisible) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isSidebaarVisible]);
+
+  // For ProfileBar
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (profileRef.current && !profileRef.current.contains(e.target)) {
+        setIsProfileBarVisible(false);
+      }
+    };
+
+    if (isProfileBarVisible) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isProfileBarVisible]);
+
+  // For SidebarTab (Mobile)
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (tabSidebarRef.current && !tabSidebarRef.current.contains(e.target)) {
+        setIsTabSidebaarVisible(false);
+      }
+    };
+
+    if (isTabSidebaarVisible) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isTabSidebaarVisible]);
+
   return (
     <div className="header">
-      <div className={`sidebar ${isSidebaarVisible ? "open" : ""}`}>
-        <SideBar />
+      <div ref={sidebarRef} className={`sidebar ${isSidebaarVisible ? "open" : ""}`}>
+        <SideBar closeSidebar={() => setIsSidebaarVisible(false)} />
       </div>
-      <div className={`sidebar ${isTabSidebaarVisible ? "open" : ""}`}>
+
+      <div ref={tabSidebarRef} className={`sidebar ${isTabSidebaarVisible ? "open" : ""}`}>
         <SidebarTab />
       </div>
-      <div className={`profilebar ${isProfileBarVisible ? "open" : ""}`}>
+
+      <div ref={profileRef} className={`profilebar ${isProfileBarVisible ? "open" : ""}`}>
         <ProfileBar />
       </div>
 
       <div className="logo" onClick={() => navigate("/")}>
         <span>Find</span>My<span>Recipe</span>
       </div>
+
       <Navbar />
+
       <div className="nav-buttons">
         <div className="search" onClick={() => navigate('/recipes')}>
-    <span className="nav-search-icon"><FaSearch /></span>
-    <span className="search-name">Search</span>
-  </div>
+          <span className="nav-search-icon"><FaSearch /></span>
+          <span className="search-name">Search</span>
+        </div>
 
         {isLogin ? (
           <div
@@ -62,11 +122,9 @@ function Header() {
           </div>
         )}
       </div>
+
       {isSidebaarVisible ? (
-        <div
-          className="closeSidebar"
-          onClick={() => setIsSidebaarVisible(false)}
-        >
+        <div className="closeSidebar" onClick={() => setIsSidebaarVisible(false)}>
           <RxCross2 />
         </div>
       ) : (
@@ -74,11 +132,9 @@ function Header() {
           <GiHamburgerMenu onClick={() => setIsSidebaarVisible(true)} />
         </div>
       )}
+
       {isTabSidebaarVisible ? (
-        <div
-          className="closeTabSidebar"
-          onClick={() => setIsTabSidebaarVisible(false)}
-        >
+        <div className="closeTabSidebar" onClick={() => setIsTabSidebaarVisible(false)}>
           <RxCross2 />
         </div>
       ) : (
